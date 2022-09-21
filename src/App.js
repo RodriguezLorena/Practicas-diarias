@@ -2,6 +2,8 @@ import {useState} from "react"
 import data from "./data.json"
 import ListaTareas from "./Components/ListaTareas";
 import './App.css';
+import FormDeCreacion from "./Components/FormDeCreacion";
+import Titulo from "./Components/Titulo";
 
 function App() {
   const[tareas, setTareas]=useState(data)
@@ -16,11 +18,26 @@ function App() {
   }
 
   const handleClick= (id)=>{
- console.log("click ", id)
+//  console.log("click ", id)
+ const filtro = [...tareas].filter((elem)=> elem.id !== id)
+ setTareas(filtro)
   }
+
+  const addTarea= (nuevasTareas)=>{
+    // console.log("Nueva tarea ", nuevasTareas)
+    const nuevoItem= {id : +new Date(), tarea: nuevasTareas, hecho: false}
+
+    setTareas([...tareas, nuevoItem]);
+  }
+
   return (
+    <div>
+      <Titulo/>
     <div className="container">
+      <h1>Lista de Tareas:</h1>
      <ListaTareas tareas={tareas} handleCheck={handleCheck} handleClick={handleClick}/>
+     <FormDeCreacion addTarea={addTarea}/>
+    </div>
     </div>
   );
 }

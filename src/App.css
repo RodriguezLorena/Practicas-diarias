@@ -1,12 +1,15 @@
 .container{
   margin: auto;
   width: 50%;
-  border: 1px solid #73AD21;
-  background-color: #32746A;
+  border-radius: 5%;
+  background-color: #f2c1de;
   padding: 10px;
 }
 .add-btn{
   float: right;
-  background-color: red;
+  background-color: brown;
+  border-color: antiquewhite;
   color: white;
+  width: 10%;
+  height: 100%;
 }
