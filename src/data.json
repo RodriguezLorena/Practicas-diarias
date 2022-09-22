@@ -12,7 +12,7 @@
 {
     "id": 3,
     "tarea": "Cocinar",
-    "hecho": true
+    "hecho": false
 },
 {
     "id": 4,

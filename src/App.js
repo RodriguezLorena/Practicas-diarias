@@ -1,45 +1,19 @@
-import {useState} from "react"
-import data from "./data.json"
-import ListaTareas from "./Components/ListaTareas";
-import './App.css';
-import FormDeCreacion from "./Components/FormDeCreacion";
-import Titulo from "./Components/Titulo";
+import React from 'react'
+import FormNoControl from './Components/FormNoControl/FormNoControl'
+import ListaDeTareas from './Components/ListaDeTareas/ListaDeTareas'
+import Titulo from './Components/Titulo'
 
-function App() {
-  const[tareas, setTareas]=useState(data)
-  console.log(tareas)
-
-  const handleCheck= (id)=>{
-    // console.log("tarea numero: ", id)
-
-   setTareas( tareas && tareas.map((elem, )=>{
-    return elem.id === Number(id) ? {...elem, hecho: !elem.hecho} : {...elem}
-  }))
-  }
-
-  const handleClick= (id)=>{
-//  console.log("click ", id)
- const filtro = [...tareas].filter((elem)=> elem.id !== id)
- setTareas(filtro)
-  }
-
-  const addTarea= (nuevasTareas)=>{
-    // console.log("Nueva tarea ", nuevasTareas)
-    const nuevoItem= {id : +new Date(), tarea: nuevasTareas, hecho: false}
-
-    setTareas([...tareas, nuevoItem]);
-  }
-
+const App = () => {
   return (
     <div>
       <Titulo/>
-    <div className="container">
-      <h1>Lista de Tareas:</h1>
-     <ListaTareas tareas={tareas} handleCheck={handleCheck} handleClick={handleClick}/>
-     <FormDeCreacion addTarea={addTarea}/>
+      <ListaDeTareas/>
+      <FormNoControl/>
     </div>
-    </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
+
