@@ -1,0 +1,28 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(158, 234, 240, 0.571);
+  border: solid black 1px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.area {
+  width: 100%;
+ 
+}
+.span {
+  font-weight: bold;
+}
+.impresion {
+  background-color: rgb(169, 163, 163);
+  width: 100%;
+  font-weight: bold;
+}
+.btn {
+  padding: 0.5rem;
+  font-weight: bold;
+}

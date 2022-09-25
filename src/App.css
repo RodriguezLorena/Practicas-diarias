@@ -1,8 +1,7 @@
 .container{
   margin: auto;
   width: 50%;
-  border-radius: 5%;
-  background-color: #f2c1de;
+  background-color: rgba(165, 42, 42, 0.636);
   padding: 10px;
 }
 .add-btn{
